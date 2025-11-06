@@ -30,7 +30,6 @@
       font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
     }
 
-    /* BODY */
     body{
       background:var(--bg);
       color:#f1f5f9;
@@ -45,7 +44,6 @@
     }
     a:hover{color:var(--accent)}
 
-    /* HEADER */
     header{
       position:fixed;top:0;left:0;right:0;height:var(--nav-h);
       display:flex;align-items:center;z-index:100;
@@ -58,7 +56,21 @@
       width:100%;max-width:var(--maxw);margin:0 auto;padding:0 1.2rem;
     }
 
-    .brand{font-weight:700;font-size:1.5rem;color:var(--accent);letter-spacing:.3px}
+    .brand{
+      display:flex;
+      align-items:center;
+      font-weight:700;
+      font-size:1.5rem;
+      color:var(--accent);
+      letter-spacing:.3px;
+      gap:.6rem;
+    }
+
+    .brand img{
+      width:32px;
+      height:32px;
+      border-radius:6px;
+    }
 
     .menu{display:flex;gap:1rem;align-items:center}
     .menu a{
@@ -67,7 +79,6 @@
     }
     .menu a:hover{background:rgba(255,255,255,0.08)}
 
-    /* HERO */
     .hero{
       min-height:100vh;
       background:url('assets/background.jpg') center/cover no-repeat;
@@ -85,7 +96,6 @@
     h1{font-size:clamp(2.5rem,5vw,3.5rem);margin-bottom:.6rem;font-weight:700}
     p.lead{color:var(--muted);font-size:1.15rem;margin-bottom:1.5rem}
 
-    /* BUTTON */
     .btn{
       background:linear-gradient(135deg,var(--accent),var(--accent2));
       color:white;padding:0.75rem 1.4rem;border:none;border-radius:var(--radius);
@@ -94,7 +104,6 @@
     }
     .btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.3)}
 
-    /* MAIN */
     main{padding-top:var(--nav-h);}
 
     section{padding:5rem 1rem;text-align:center;}
@@ -146,24 +155,25 @@
       border-radius: 6px;
     }
 
-    /* ANIMATIONS */
     @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
     @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
 
-    /* RESPONSIVE */
     @media(max-width:600px){
       .menu{display:none}
       .brand{font-size:1.3rem}
       section{padding:3.5rem 1rem}
       .card{padding:1.5rem}
-      footer .social a span { display: none; } /* esconde texto no mobile se quiser */
+      footer .social a span { display: none; }
     }
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <div class="brand">BlipeWorld</div>
+      <div class="brand">
+        <img src="assets/icon.png" alt="Ícone do BlipeWorld" />
+        BlipeWorld
+      </div>
       <div class="menu">
         <a href="#inicio">Início</a>
         <a href="#sobre">Sobre</a>
@@ -220,8 +230,8 @@
   </footer>
 
   <script>
-    // ano atual
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
