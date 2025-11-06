@@ -120,6 +120,17 @@
       animation:fadeUp .8s ease;
     }
 
+    /* links dentro dos cards (como o YouTube) com a mesma cor do Discord */
+    .card a {
+      color: var(--accent);
+      font-weight: 700;
+      transition: color .3s, transform .2s;
+    }
+    .card a:hover {
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
     footer{
       text-align:center;padding:3rem 1rem;color:var(--muted);
       border-top:1px solid rgba(255,255,255,0.05);
@@ -203,7 +214,7 @@
       <h2>IP do Servidor</h2>
       <div class="card">
         <p>Para conseguir o IP do servidor <strong>BlipeWorld</strong>, entre no nosso servidor do Discord:</p>
-        <p><a href="https://discord.gg/rMQvEEc9Gv" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-weight:bold;">https://discord.gg/rMQvEEc9Gv</a></p>
+        <p><a href="https://discord.gg/rMQvEEc9Gv" target="_blank" rel="noopener noreferrer">https://discord.gg/rMQvEEc9Gv</a></p>
         <p>Lá você encontrará o IP, as novidades, eventos e as regras do servidor.</p>
       </div>
     </section>
@@ -234,4 +245,3 @@
   </script>
 </body>
 </html>
-
