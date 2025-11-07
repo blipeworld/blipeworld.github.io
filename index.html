@@ -9,15 +9,12 @@
   <meta property="og:description" content="Entre no Discord para conseguir o IP do servidor BlipeWorld!" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/background.jpg" />
-
-  <!-- FAVICON -->
   <link rel="icon" href="assets/favicon.png" type="image/png" />
 
   <style>
     /* RESET */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-    /* ROOT */
     :root{
       --bg:#0e1621;
       --card:#1b2636cc;
@@ -96,13 +93,24 @@
     h1{font-size:clamp(2.5rem,5vw,3.5rem);margin-bottom:.6rem;font-weight:700}
     p.lead{color:var(--muted);font-size:1.15rem;margin-bottom:1.5rem}
 
+    /* BOTÃO PADRÃO */
     .btn{
       background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:white;padding:0.75rem 1.4rem;border:none;border-radius:var(--radius);
-      cursor:pointer;font-weight:600;font-size:1rem;
+      color:white;
+      padding:0.75rem 1.4rem;
+      border:none;
+      border-radius:var(--radius);
+      cursor:pointer;
+      font-weight:600;
+      font-size:1rem;
+      display:inline-block;
+      text-align:center;
       transition:transform .2s,box-shadow .3s;
     }
-    .btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.3)}
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    }
 
     main{padding-top:var(--nav-h);}
 
@@ -120,15 +128,20 @@
       animation:fadeUp .8s ease;
     }
 
-    /* links dentro dos cards */
-    .card a {
+    /* links dentro dos cards (não botões) */
+    .card a:not(.btn) {
       color: var(--accent);
       font-weight: 700;
       transition: color .3s, transform .2s;
     }
-    .card a:hover {
+    .card a:not(.btn):hover {
       color: #ffffff;
       transform: translateY(-1px);
+    }
+
+    /* BOTÃO DENTRO DO CARD ("Ver todas") */
+    .card .btn {
+      margin-top: 2rem; /* aumentei a margem para descer o botão */
     }
 
     footer{
@@ -220,13 +233,14 @@
       </div>
     </section>
 
-    <!-- NOVA SEÇÃO DE NOTÍCIAS -->
+    <!-- SEÇÃO DE NOTÍCIAS -->
     <section id="noticias">
       <h2>Notícias</h2>
       <div class="card">
-        <h3>Bem-vindo ao site do BlipeWorld!</h3>
+        <h3>📰Bem-vindo ao website do BlipeWorld!📰</h3>
         <p>Seja muito bem-vindo ao novo site oficial do <strong>BlipeWorld</strong>! Aqui você poderá ver as notícias mais recentes sobre o servidor, incluindo atualizações, eventos e anúncios da comunidade.</p>
         <p>Fique ligado — novas informações serão publicadas aqui regularmente para manter todos os jogadores atualizados!</p>
+        <a href="noticias.html" class="btn">Ver todas</a>
       </div>
     </section>
 
@@ -234,7 +248,7 @@
       <h2>Contato</h2>
       <div class="card">
         <p><strong>Criador:</strong> Cappy_kk</p>
-        <p><strong>YouTube:</strong> <a id="ytLink" href="https://www.youtube.com/@Cappykk-t4k" target="_blank" rel="noopener noreferrer">youtube.com/@Cappykk-t4k</a></p>
+        <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@Cappykk-t4k" target="_blank" rel="noopener noreferrer">youtube.com/@Cappykk-t4k</a></p>
       </div>
     </section>
   </main>
