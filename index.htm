@@ -100,7 +100,7 @@
     }
 
     h1 { font-size: clamp(2.5rem,5vw,3.5rem); margin-bottom: .6rem; font-weight: 700 }
-    p.lead { color: var(--muted); font-size: 1.15rem; margin-bottom: 1.5rem }
+    p.lead { color: var(--header-color,#000080 ); font-size: 1.50rem; margin-bottom: 1.45rem }
 
     .btn {
       background: linear-gradient(135deg, var(--accent), var(--accent2));
@@ -199,12 +199,10 @@
   <main>
     <!-- HERO COM VÍDEO -->
     <section id="inicio" class="hero">
-      <video autoplay muted loop playsinline id="bg-video">
-        <source src="assets/crazy.mp4" type="video/mp4">
-      </video>
+      <img src="assets/background.jpg" alt="PORCARIA NAO CARREGOU HSAUASHASHUhAFWF"
       <div class="overlay"></div>
       <div class="inner">
-        <h1>Bem-vindo ao BlipeWorld!</h1>
+        <h1>Bem-vindo ao <strong>BlipeWorld!<strong></h1>
         <p class="lead">Um servidor de Minecraft RP com uma comunidade ativa e acolhedora.</p>
         <a class="btn" href="#ip">Ver como entrar</a>
       </div>
@@ -271,3 +269,4 @@
   </script>
 </body>
 </html>
+
