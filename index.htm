@@ -64,20 +64,37 @@
     }
     .menu a:hover { background: rgba(255,255,255,0.08) }
 
+    /* ===== HERO COM VÍDEO ===== */
     .hero {
-      min-height: 100vh;
-      background: url('assets/background.jpg') center/cover no-repeat;
-      display: grid; place-items: center; text-align: center;
       position: relative;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      overflow: hidden;
     }
 
-    .hero::after {
-      content: ""; position: absolute; inset: 0;
+    #bg-video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero .overlay {
+      position: absolute;
+      inset: 0;
       background: rgba(0,0,0,0.55);
+      z-index: 1;
     }
 
     .hero .inner {
-      position: relative; z-index: 2; padding: 2rem; max-width: 800px;
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+      max-width: 800px;
       animation: fadeIn 1.5s ease;
       text-shadow: 0 2px 10px rgba(0,0,0,0.6);
     }
@@ -180,7 +197,12 @@
   </header>
 
   <main>
+    <!-- HERO COM VÍDEO -->
     <section id="inicio" class="hero">
+      <video autoplay muted loop playsinline id="bg-video">
+        <source src="assets/untitled.mp4" type="video/mp4">
+      </video>
+      <div class="overlay"></div>
       <div class="inner">
         <h1>Bem-vindo ao BlipeWorld!</h1>
         <p class="lead">Um servidor de Minecraft RP com uma comunidade ativa e acolhedora.</p>
@@ -218,7 +240,7 @@
       <h2>Projetos</h2>
       <div class="card">
         <h3>Projetos em andamento</h3>
-        <p>Aqui você verá os projetos mais recentes desenvolvidos pela BlipeStudios, responsáveis por dar vida ao mundo do <strong>BlipeWorld!<strong></p>
+        <p>Aqui você verá os projetos mais recentes desenvolvidos pela BlipeStudios, responsáveis por dar vida ao mundo do <strong>BlipeWorld!</strong></p>
         <a href="projetos.htm" class="btn">Mais projetos</a>
       </div>
     </section>
