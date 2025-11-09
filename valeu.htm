@@ -27,12 +27,23 @@
       font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
     }
 
+    html, body {
+      height: 100%;
+    }
+
     body{
-      background:var(--bg);
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
       color:#f1f5f9;
-      min-height:100vh;
       scroll-behavior:smooth;
       overflow-x:hidden;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      padding-top: var(--nav-h);
     }
 
     a{color:inherit;text-decoration:none;}
@@ -69,8 +80,6 @@
       border-radius:6px;
     }
 
-    main{padding-top:var(--nav-h);}
-
     section{padding:5rem 1rem;text-align:center;}
     section h2{font-size:2rem;margin-bottom:1.2rem;color:var(--accent)}
 
@@ -96,7 +105,6 @@
       line-height:1.6;
     }
 
-    /* BOTÃO igual ao "Ver como entrar" */
     .btn{
       background:linear-gradient(135deg,var(--accent),var(--accent2));
       color:white;
@@ -118,9 +126,12 @@
     }
 
     footer{
-      text-align:center;padding:3rem 1rem;color:var(--muted);
+      text-align:center;
+      padding:3rem 1rem;
+      color:var(--muted);
       border-top:1px solid rgba(255,255,255,0.05);
       background:rgba(15,23,42,0.9);
+      margin-top: auto;
     }
 
     footer .social {
@@ -170,20 +181,12 @@
       </div>
     </nav>
   </header>
-  </div>
-    </section>
 
   <main>
     <section>
-      <section>
-  <h2><strong>Valeu!<strong></h2>
-
-  <a href="index.htm" class="btn">← Voltar ao site</a>
-
-  <div>
-  <h1>Nós da <strong>BlipeStudios<strong> agradecemos por você nos dar feedback!
-  </div>
-
+      <h2><strong>Valeu!</strong></h2>
+      <h3>Nós da <strong>BlipeStudios</strong> agradecemos por você nos dar feedback!</h3>
+      <a href="index.htm" class="btn">← Voltar ao site</a>
     </section>
   </main>
 
