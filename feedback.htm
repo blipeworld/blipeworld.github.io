@@ -10,43 +10,176 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/background.jpg" />
   <link rel="icon" href="assets/favicon.png" type="image/png" />
+
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --bg:#0e1621;--card:#1b2636cc;--accent:#3B7CED;--accent2:#00008B;
-      --muted:#94a3b8;--maxw:1100px;--nav-h:70px;--radius:14px;
+      --bg:#0e1621;
+      --accent:#3B7CED;
+      --accent2:#00008B;
+      --muted:#94a3b8;
+      --radius:14px;
       font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
     }
-    body{background:var(--bg);color:#f1f5f9;min-height:100vh;scroll-behavior:smooth;overflow-x:hidden;}
-    a{color:inherit;text-decoration:none;} a:hover{color:var(--accent)}
-    header{position:fixed;top:0;left:0;right:0;height:var(--nav-h);
-      display:flex;align-items:center;z-index:100;background:rgba(15,23,42,0.7);
-      backdrop-filter:blur(10px);box-shadow:0 2px 10px rgba(0,0,0,.3);}
-    nav{display:flex;align-items:center;justify-content:space-between;
-      width:100%;max-width:var(--maxw);margin:0 auto;padding:0 1.2rem;}
-    .brand{display:flex;align-items:center;font-weight:700;font-size:1.5rem;
-      color:var(--accent);letter-spacing:.3px;gap:.6rem;}
+
+    body{
+      background:linear-gradient(135deg,#0f172a,#1e293b,#0e1621);
+      background-size:400% 400%;
+
+    }
+    @keyframes gradient{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    header{
+      position:fixed;
+      top:0;left:0;right:0;
+      height:70px;
+      display:flex;align-items:center;
+      background:rgba(15,23,42,0.7);
+      backdrop-filter:blur(10px);
+      box-shadow:0 2px 10px rgba(0,0,0,.3);
+      z-index:100;
+    }
+
+    nav{
+      display:flex;align-items:center;justify-content:space-between;
+      width:100%;max-width:1100px;margin:0 auto;padding:0 1.2rem;
+    }
+
+    .brand{
+      display:flex;align-items:center;gap:.6rem;
+      font-weight:700;font-size:1.5rem;color:var(--accent);
+    }
     .brand img{width:32px;height:32px;border-radius:6px;}
-    main{padding-top:var(--nav-h);}
-    section{padding:5rem 1rem;text-align:center;display:flex;flex-direction:column;
-      align-items:center;justify-content:center;}
+
+    main{padding-top:70px;}
+    section{
+      padding:5rem 1rem;
+      text-align:center;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+    }
+
     section h2{font-size:2rem;margin-bottom:1.2rem;color:var(--accent);}
-    .btn{background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:white;padding:0.75rem 1.4rem;border:none;border-radius:var(--radius);
-      cursor:pointer;font-weight:600;font-size:1rem;margin-top:1rem;margin-bottom:1.25rem;}
-    .btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.3);}
-    .feedback-box{display:block;width:100%;max-width:400px;padding:14px 18px;border:none;
-      border-radius:var(--radius);background-color:#f1f1f1;color:#000;font-size:1rem;
-      outline:none;margin-top:0.5rem;transition:box-shadow .2s;}
-    .feedback-box:focus{box-shadow:0 0 0 3px rgba(59,124,237,0.4);}
-    footer{text-align:center;padding:3rem 1rem;color:var(--muted);
-      border-top:1px solid rgba(255,255,255,0.05);background:rgba(15,23,42,0.9);}
-    footer .social{margin-top:1rem;display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;}
-    footer .social a{display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);
-      font-weight:600;transition:color .3s,transform .2s;}
-    footer .social a:hover{color:#fff;transform:translateY(-2px);}
-    footer .social img{width:24px;height:24px;vertical-align:middle;border-radius:6px;}
-    @media(max-width:600px){section{padding:3.5rem 1rem}.feedback-box{width:80%}footer .social a span{display:none}}
+
+    .btn{
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:white;
+      padding:0.75rem 1.4rem;
+      border:none;
+      border-radius:var(--radius);
+      cursor:pointer;
+      font-weight:600;
+      font-size:1rem;
+      margin-top:1rem;
+      margin-bottom:1.25rem;
+      transition:transform .2s,box-shadow .3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    /* === FORMULÁRIO BONITO === */
+    form{
+      background:rgba(255,255,255,0.06);
+      backdrop-filter:blur(14px);
+      border-radius:20px;
+      padding:2.5rem 2rem;
+      box-shadow:0 8px 25px rgba(0,0,0,0.25);
+      width:100%;
+      max-width:500px;
+      margin-top:2rem;
+      animation:fadeIn 0.8s ease forwards;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(30px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    .input-group{
+      position:relative;
+      margin-bottom:1.8rem;
+      width:100%;
+    }
+
+    .feedback-box{
+      width:100%;
+      background:rgba(255,255,255,0.15);
+      border:2px solid transparent;
+      border-radius:12px;
+      padding:1.1rem 1rem;
+      font-size:1rem;
+      color:#fff;
+      transition:all 0.25s ease;
+    }
+
+    .feedback-box::placeholder{
+      color:transparent;
+    }
+
+    .feedback-box:focus{
+      border-color:var(--accent);
+      background:rgba(255,255,255,0.2);
+      box-shadow:0 0 10px rgba(59,124,237,0.4);
+    }
+
+    .input-group label{
+      position:absolute;
+      top:50%;
+      left:1rem;
+      transform:translateY(-50%);
+      color:#cbd5e1;
+      pointer-events:none;
+      transition:all 0.2s ease;
+      font-size:1rem;
+    }
+
+    .feedback-box:focus + label,
+    .feedback-box:not(:placeholder-shown) + label{
+      top:0.3rem;
+      left:0.8rem;
+      font-size:0.8rem;
+      color:var(--accent);
+      background:rgba(14,22,33,0.8);
+      padding:0 0.4rem;
+      border-radius:6px;
+    }
+
+    footer{
+      text-align:center;
+      padding:3rem 1rem;
+      color:var(--muted);
+      border-top:1px solid rgba(255,255,255,0.05);
+      background:rgba(15,23,42,0.9);
+    }
+
+    footer .social{
+      margin-top:1rem;
+      display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;
+    }
+
+    footer .social a{
+      display:inline-flex;align-items:center;gap:0.4rem;
+      color:var(--accent);font-weight:600;
+      transition:color .3s,transform .2s;
+    }
+
+    footer .social a:hover{
+      color:#fff;transform:translateY(-2px);
+    }
+
+    footer .social img{width:24px;height:24px;border-radius:6px;}
+
+    @media(max-width:600px){
+      section{padding:3.5rem 1rem}
+      .feedback-box{width:100%}
+      footer .social a span{display:none}
+    }
   </style>
 </head>
 <body>
@@ -64,57 +197,50 @@
       <h2><strong>Feedback</strong></h2>
       <a href="index.htm" class="btn">← Voltar ao site</a>
 
-     <!-- FORMULARIO AFSHFASFSAFHSFHUAWFAWFHUAWF -->
-
+      <!-- FORMULÁRIO MELHORADO -->
       <form action="https://formsubmit.co/221770344c3ccaebd83b719d4500f2c4" method="POST">
-        <div>
-          <h2>Sugestão de episódios</h2>
-          <input type="text" name="episodios" class="feedback-box" required placeholder="Digite sua sugestão">
+        <div class="input-group">
+          <input type="text" name="episodios" class="feedback-box" required placeholder=" " />
+          <label>Sugestão de episódios</label>
         </div>
 
-        <div>
-          <h2>Sugestão de personagens</h2>
-          <input type="text" name="personagens" class="feedback-box" required placeholder="Digite sua sugestão">
+        <div class="input-group">
+          <input type="text" name="personagens" class="feedback-box" required placeholder=" " />
+          <label>Sugestão de personagens</label>
         </div>
 
-        <div>
-          <h2>Feedback geral da série</h2>
-          <input type="text" name="geral" class="feedback-box" required placeholder="Escreva seu feedback">
+        <div class="input-group">
+          <input type="text" name="geral" class="feedback-box" required placeholder=" " />
+          <label>Feedback geral da série</label>
+        </div>
+
+        <div class="input-group">
+          <input type-"text" name="discord" class="feedback-box" required placeholder=" "/>
+          <label>Seu Discord para contato</label>
         </div>
 
         <button type="submit" class="btn">Enviar Feedback</button>
-          <input type="hidden" name="_next" value="https://blipestudios.ddns.net/valeu.htm">
-          <input type="hidden" name="_captcha" value="false">
+
+        <input type="hidden" name="_next" value="https://blipestudios.ddns/valeu.htm">
+        <input type="hidden" name="_captcha" value="false">
       </form>
-      <!-- FORMULARIO ACABA SASUHASDWADSAWD -->
     </section>
   </main>
 
   <footer>
     © <span id="year"></span> BlipeWorld — Criado por Cappy_kk
     <div class="social">
-      <a href="https://discord.gg/rMQvEEc9Gv" target="_blank"><img src="assets/discord.png" alt="Discord" /> <span>Discord</span></a>
-      <a href="https://www.youtube.com/@Cappykk-t4k" target="_blank"><img src="assets/youtube.png" alt="YouTube" /> <span>YouTube</span></a>
+      <a href="https://discord.gg/rMQvEEc9Gv" target="_blank">
+        <img src="assets/discord.png" alt="Discord" /> <span>Discord</span>
+      </a>
+      <a href="https://www.youtube.com/@Cappykk-t4k" target="_blank">
+        <img src="assets/youtube.png" alt="YouTube" /> <span>YouTube</span>
+      </a>
     </div>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // comportamento do submit (exemplo)
-    document.getElementById('feedbackForm').addEventListener('submit', function(e){
-      e.preventDefault(); // evita recarregar a página
-      const data = new FormData(this);
-      const episodios = data.get('episodios');
-      const personagens = data.get('personagens');
-      const geral = data.get('geral');
-
-      alert(
-        `Feedback enviado!\n\nEpisódios: ${episodios}\nPersonagens: ${personagens}\nGeral: ${geral}`
-      );
-
-      this.reset(); // limpa os campos
-    });
   </script>
 </body>
 </html>
