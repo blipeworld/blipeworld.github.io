@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Equipe - BlipeStudios</title>
+  <meta name="description" content="Equipe da BlipeStudios" />
+  <meta property="og:title" content="Equipe - BlipeWorld" />
+  <meta property="og:description" content="Veja a equipe da BlipeStudios!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/background.jpg" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+
+  <style>
+    /* RESET */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+    :root{
+      --bg:#0e1621;
+      --card:#1b2636cc;
+      --accent:#3B7CED;
+      --accent2:#00008B;
+      --muted:#94a3b8;
+      --maxw:1100px;
+      --nav-h:70px;
+      --radius:14px;
+      font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
+
+    body{
+      background:var(--bg);
+      color:#f1f5f9;
+      min-height:100vh;
+      scroll-behavior:smooth;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none;}
+    a, .btn {
+      transition: color .2s, background .25s, transform .2s, box-shadow .3s;
+    }
+    a:hover{color:var(--accent)}
+
+    header{
+      position:fixed;top:0;left:0;right:0;height:var(--nav-h);
+      display:flex;align-items:center;z-index:100;
+      background:rgba(15,23,42,0.7);backdrop-filter:blur(10px);
+      box-shadow:0 2px 10px rgba(0,0,0,.3);
+    }
+
+    nav{
+      display:flex;align-items:center;justify-content:space-between;
+      width:100%;max-width:var(--maxw);margin:0 auto;padding:0 1.2rem;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      font-weight:700;
+      font-size:1.5rem;
+      color:var(--accent);
+      letter-spacing:.3px;
+      gap:.6rem;
+    }
+
+    .brand img{
+      width:32px;
+      height:32px;
+      border-radius:6px;
+    }
+
+    main{padding-top:var(--nav-h);}
+
+    section{padding:5rem 1rem;text-align:center;}
+    section h2{font-size:2rem;margin-bottom:1.2rem;color:var(--accent)}
+
+    .card{
+      background:var(--card);
+      padding:2rem;
+      border-radius:var(--radius);
+      box-shadow:0 8px 25px rgba(0,0,0,0.3);
+      backdrop-filter:blur(10px);
+      max-width:var(--maxw);
+      margin:0 auto 2rem;
+      text-align:left;
+      animation:fadeUp .8s ease;
+    }
+
+    .card h3 {
+      color:#fff;
+      margin-bottom:.6rem;
+    }
+    .card p {
+      color:var(--muted);
+      margin-bottom:1rem;
+      line-height:1.6;
+    }
+
+    /* BOTÃO igual ao "Ver como entrar" */
+    .btn{
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:white;
+      padding:0.75rem 1.4rem;
+      border:none;
+      border-radius:var(--radius);
+      cursor:pointer;
+      font-weight:600;
+      font-size:1rem;
+      transition:transform .2s,box-shadow .3s;
+      display:inline-block;
+      text-align:center;
+      margin-top:1rem;
+      margin-bottom:1.25rem;
+    }
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    footer{
+      text-align:center;padding:3rem 1rem;color:var(--muted);
+      border-top:1px solid rgba(255,255,255,0.05);
+      background:rgba(15,23,42,0.9);
+    }
+
+    footer .social {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    footer .social a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--accent);
+      font-weight: 600;
+      transition: color .3s, transform .2s;
+    }
+
+    footer .social a:hover {
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    footer .social img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      border-radius: 6px;
+    }
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+
+    @media(max-width:600px){
+      section{padding:3.5rem 1rem}
+      .card{padding:1.5rem}
+      footer .social a span { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="brand">
+        <img src="assets/icon.png" alt="Ícone do BlipeWorld" />
+        BlipeStudios
+      </div>
+    </nav>
+  </header>
+  </div>
+    </section>
+
+  <main>
+    <section>
+  <h2>Equipe da <strong>BlipeStudios</strong></h2>
+
+  <a href="index.htm" class="btn">← Voltar ao site</a>
+
+  <div class="card" style="text-align: center;">
+    <h2 style="margin-bottom: 15px;">Cappy</h2>
+    <p style="margin-top: 15px;">Chefe da <strong>BlipeStudios.</strong></p>
+    <img src="assets/cappy.png" alt="Imagem nao carregou" style="border-radius: 30px; width: 10%; margin-bottom: 15px;">
+  </div>
+
+   <div class="card" style="text-align: center;">
+    <h2 style="margin-bottom: 15px;">Daniel</h2>
+    <p style="margin-top: 15px;">Sub-chefe da <strong>BlipeStudios.</strong></p>
+    <img src="assets/daniel.png" alt="Imagem nao carregou" style="border-radius: 30px; width: 10%; margin-bottom: 15px;">
+  </div>
+
+   <div class="card" style="text-align: center;">
+    <h2 style="margin-bottom: 15px;">Mini</h2>
+    <p style="margin-top: 15px;">Roteirista-chefe da <strong>BlipeStudios.</strong></p>
+    <img src="assets/mini.png" alt="Imagem nao carregou" style="border-radius: 30px; width: 10%; margin-bottom: 15px;">
+  </div>
+
+   <div class="card" style="text-align: center;">
+    <h2 style="margin-bottom: 15px;">Ace</h2>
+    <p style="margin-top: 15px;">Supervisor e ajudante da <strong>BlipeStudios.</strong></p>
+    <img src="assets/ace.png" alt="Imagem nao carregou" style="border-radius: 30px; width: 10%; margin-bottom: 15px;">
+  </div>
+
+   <div class="card" style="text-align: center;">
+    <h2 style="margin-bottom: 15px;">Carlos</h2>
+    <p style="margin-top: 15px;">Supervisor Builder da <strong>BlipeStudios</strong></p>
+    <img src="assets/carlos.png" alt="Imagem nao carregou" style="border-radius: 30px; width: 10%; margin-bottom: 15px;">
+  </div>
+
+  <div class="card" style="text-align: center;">
+    <h2 style="margin-bottom: 15px;">Builders, atores e BlipeWorkers da <strong>BlipeStudios</strong></h2>
+    <p>Tosh, Pedrin, Douma, Fernando, Pavê, Henk e David.</p>   
+  </div>
+
+  </div>
+</section>
+
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> BlipeStudios — Criado por Cappy_kk
+    <div class="social">
+      <a href="https://discord.gg/rMQvEEc9Gv" target="_blank" aria-label="Discord">
+        <img src="assets/discord.png" alt="Discord" /> <span>Discord</span>
+      </a>
+      <a href="https://www.youtube.com/@Cappykk-t4k" target="_blank" aria-label="YouTube">
+        <img src="assets/youtube.png" alt="YouTube" /> <span>YouTube</span>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
