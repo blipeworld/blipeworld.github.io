@@ -219,11 +219,16 @@
     <section id="ip">
       <h2>IP do <strong>BlipeWorld<strong></h2>
       <div class="card">
-        <p>Para conseguir o IP do servidor <strong>BlipeWorld</strong>, entre no nosso servidor do Discord:</p>
-        <p><a href="https://discord.gg/rMQvEEc9Gv" target="_blank" rel="noopener noreferrer">https://discord.gg/rMQvEEc9Gv</a></p>
-        <p>Lá você encontrará o IP, as novidades, eventos e as regras do servidor.</p>
-      </div>
-    </section>
+      <p>Para conseguir o IP do servidor <strong>BlipeWorld</strong>, entre no nosso servidor do Discord:</p>
+      <p>
+    <a href="https://discord.gg/rMQvEEc9Gv" target="_blank" rel="noopener noreferrer">
+      https://discord.gg/rMQvEEc9Gv
+    </a>
+  </p>
+
+  <p id="server-status">🔄 Carregando status do servidor...</p>
+</div>
+
 
     <section id="noticias">
       <h2>Notícias</h2>
@@ -284,6 +289,26 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+  const serverIP = "sd-br2.blazebr.com:25773";
+  const statusEl = document.getElementById("server-status");
+
+  fetch(`https://api.mcsrvstat.us/2/${serverIP}`)
+    .then(res => res.json())
+    .then(data => {
+      if (!data.online) {
+        statusEl.innerHTML = "🔴 Servidor offline";
+        return;
+      }
+
+      const online = data.players.online;
+      const max = data.players.max;
+
+      statusEl.innerHTML = `🔵 <strong>${online}</strong> jogadores online de <strong>${max}</strong>`;
+    })
+    .catch(() => {
+      statusEl.innerHTML = "⚠️ Erro ao obter status do servidor";
+    });
   </script>
 </body>
 </html>
